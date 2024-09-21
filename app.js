@@ -16,3 +16,12 @@ let currentPos = startPos;
 // Vị trí của quả bóng, tương ứng với vị trí của khối gạch đỡ bóng
 const ballStartPos = [270, 40];
 let currentBallPos = ballStartPos;
+
+// Tạo tấm gỗ
+const user = document.createElement("div");
+user.classList.add("user");
+// Thêm bóng vào grid
+grid.appendChild(user);
+// Set vị trí ban đầu
+user.style.left = startPos[0] + "px";
+user.style.bottom = startPos[1] + "px";
