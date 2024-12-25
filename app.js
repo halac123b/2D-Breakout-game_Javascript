@@ -17,11 +17,35 @@ let currentPos = startPos;
 const ballStartPos = [270, 40];
 let currentBallPos = ballStartPos;
 
+class Block {
+    constructor(xAxis, yAxis) {
+        this.bottomLeft = [xAxis, yAxis];
+    }
+}
+
 // Tạo tấm gỗ
 const user = document.createElement("div");
 user.classList.add("user");
-// Thêm bóng vào grid
+// Thêm tấm gỗ vào grid
 grid.appendChild(user);
-// Set vị trí ban đầu
-user.style.left = startPos[0] + "px";
-user.style.bottom = startPos[1] + "px";
+
+drawUser();
+
+// Add the ball
+const ball = document.createElement("div");
+ball.classList.add("ball");
+grid.appendChild(ball);
+drawBall();
+
+
+function drawUser() {
+    // Set vị trí ban đầu
+    user.style.left = currentPos[0] + "px";
+    user.style.bottom = currentPos[1] + "px";
+}
+
+function drawBall() {
+    // Set vị trí ban đầu
+    ball.style.left = currentBallPos[0] + "px";
+    ball.style.bottom = currentBallPos[1] + "px";
+}
